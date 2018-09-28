@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>::Task 9::</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<!-- Main Div -->
+<div class="main">
+
+
+<!-- Left Child -->
+<div class="leftChild">
+
+
+</div>
+
+
+
+<!-- RightChild -->
+<div class="rightChild">
+
+
+</div>
+
+</div>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+	var query=window.location.search.substring(1).split("&");
+	for (var i = 0, max=query.length; i<max; i++) {
+		var param=query[i].split("=");
+		console.log(param);
+
+	}
+	console.log(param[1]);
+
+	fetch("data.json").then(res=>{
+		return res.json();
+	}).then(data=>{
+		console.log(data);
+		display(data.data);
+	})
+
+	var leftChild=document.querySelector(".leftChild");
+	var rightChild=document.querySelector(".rightChild");
+
+	function display(info){
+		for(var i=0; i<info.length; i++){
+			if(param[1]==info[i].id){
+				var name=document.createElement("h1");
+				name.textContent=info[i].name;
+				leftChild.append(name);
+
+
+ var h2=document.createElement("h2");
+h2,textContent="education qualifications";
+rightChild.append(h2);
+var hr=document.createElement("hr");
+h2.append(hr);
+
+
+				var ul=document.createElement("ul");
+				rightChild.append(ul);
+
+				for(var j=0; j<info[i].education.length; j++){
+					var li=document.createElement("li");
+					ul.append(li);
+
+					li.textContent=info[i].education[j].degree;
+					var inst=document.createElement("p");
+					inst.textContent=info[i].education[j].institute;
+
+					var data=document.createElement("p");
+					data.textContent=info[i].education[j].data;
+
+					ul.append(inst);
+					ul.append(data);
+				}
+			}
+		}
+	}
+</script>

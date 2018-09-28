@@ -1,0 +1,50 @@
+{
+	"data":[
+		{
+			"id":1,
+			"name":"DINU REDDY",
+			"email":"dinureddy1432@gmail.com",
+			"phone":"9515521728",
+			"education":[
+				{
+					"degree":"B-tech",
+					"institute":"oxford Engg college",
+					"data":["72%","2016-20"]
+				},
+				{
+					"degree":"puc",
+					"institute":"krupanidhi pu college",
+					"data":["88%","2014-16"]
+				},
+				{
+					"degree":"sslc",
+					"institute":"gulabi techno School",
+					"data":["77%","2013-14"]
+				}
+			]
+		},
+		{
+			"id":2,
+			"name":"Shamba",
+			"email":"dinureddy1432@gmail.com",
+			"phone":"9515521728",
+			"education":[
+				{
+					"degree":"B-tech",
+					"institute":"be Engg college",
+					"data":["72%","2016-20"]
+				},
+				{
+					"degree":"INTERMEDIATE",
+					"institute":"vidya jyothi pu college",
+					"data":["72%","2014-16"]
+				},
+				{
+					"degree":"sslc",
+					"institute":"vidhya jothi SCHOOL",
+					"data":["72%","2013-14"]
+				}
+			]
+		}
+	]
+}

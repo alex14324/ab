@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title>Dinu Reddy</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="main">
+		<div class="sub">
+			<h2>Personal Inoformation</h2> <br>
+			<input type="text" name="name" id="name" placeholder="name"> <br>
+			<input type="email" name="email" id="email" placeholder="email"> <br>
+			<input type="password" name="name" id="password" placeholder="password"><br>
+			<input type="password" name="name" id="confirmpassword" placeholder="confirm password"><br>
+			<input type="number" name="mobile" id="mobile" placeholder="mobile"><br>
+		
+  </div>
+  <div class="sub">
+  	<h2>Graduation information</h2> <br>
+  	<label for="gdegre">
+  	<select class="" name="gdegre" id="gdegre">
+<option> Select Your Degre</option>
+<option>B-Tech</option>
+<option>MBBS</option>
+  	</select>
+  </label> <br>
+  <label for="">
+  	<input type="text name="ginst" id="ginst" placeholder="Institute">
+  </label> <br>
+  <label for="">
+  	<select name="branch" id="branch">
+  		<option>Select Your Branch</option>
+  		<option>cse</option>
+  		<option>mech</option>
+  		<option>ece</option>
+  		<option>eee</option>
+  		<option>aeronatical</option>
+  		<option>it</option>
+  		<option>radiology</option>
+  		<option>BDS</option>
+  		<option>Bpharmcy</option>
+  		<option>cardiolagist</option>
+  		<option>bsc</option>
+  		<option>btp</option>
+  		<option>dMMc</option>
+  		<option>Dhmc</option>
+  		<option>BHM</option>
+
+    </select>
+</label> <br>
+<label for="gyear">
+	<input type="number" name="gyear" id="gyear" placeholder="Year Of Passing">
+</label> <br>
+<label for="gper">
+	<input type="number" name="gper" id="gper
+	placeholder="persentage(%)">
+	</label> <br>
+  </div>
+
+
+  <div class="sub">
+  	<h2>Pu Information</h2> <br>
+  	<label for="gpu">
+  	<select class="" name="gpu" id="gpu">
+<option> Select Your Course</option>
+<option>PUC</option>
+<option>Diplomo</option>
+  	</select>
+  </label> <br>
+  <label for="">
+  	<input type="text name="ginst" id="ginst" placeholder="Institute">
+  </label> <br>
+  <label for="">
+  	<select name="branch" id="branch">
+  		<option>Select Your Branch</option>
+  		<option>cse</option>
+  		<option>mech</option>
+  		<option>eee</option>
+  		<option>ece</option>
+  		<option>civil</option>
+  		<option>pcmb</option>
+  		<option>pcmc</option>
+  		<option>pcme</option>
+  		<option>seba</option>
+  		<option>ceba</option>
+  		<option>heba</option>
+  		<option>meba</option>
+  		
+
+    </select>
+</label> <br>
+<label for="gyear">
+	<input type="number" name="gyear" id="gyear" placeholder="Year Of Passing">
+</label> <br>
+<label for="gper">
+	<input type="number" name="gper" id="gper
+	placeholder="persentage(%)">
+	</label> <br>
+  </div>
+
+    <div class="sub">
+  	<h2>SSLC Information</h2> <br>
+  	<label for="gsslc">
+  	<select class="" name="gsslc" id="gsslc">
+<option> Select Your Course</option>
+<option>State</option>
+<option>CBSE</option>
+  	</select>
+  </label> <br>
+  <label for="">
+  	<input type="text name="ginst" id="ginst" placeholder="Institute">
+  </label> <br>
+  <label for="">
+  	<select name="branch" id="branch">
+  		<option>Select Your Branch</option>
+  		<option>pass</option>
+  		<option>fail</option>
+  		
+  		
+
+    </select>
+</label> <br>
+<label for="gyear">
+	<input type="number" name="gyear" id="gyear" placeholder="Year Of Passing">
+</label> <br>
+<label for="gper">
+	<input type="number" name="gper" id="gper
+	placeholder="persentage(%)">
+	</label> <br>
+  </div>
+
+</div>
+	<button type="button" name="button" id="button" onclick="submitData()"> SUBMIT </button>
+
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+	function submitData(){
+var name;
+var email1;
+var password;
+var confirmpassword;
+var mobile;
+var open;
+var tx;
+var store;
+name=document.getElementById("name").value;
+email=document.getElementById("email").value;
+password=document.getElementById("password").value;
+confirmpassword=document.getElementById("confirmpassword").value;
+mobile=document.getElementById("mobile").value;
+console.log(name);
+console.log(email);
+console.log(password);
+console.log(confirmpassword);
+console.log(mobile);
+var indexedDB=window.indexedDB ||
+window.indexedDB || window.webkitIndexedDB || window.mozIndex.edDB;
+request=indexedDB.open("myDB",1);
+request.onerror=function(e){
+	console.log("error:"+errorCode);
+	}
+	request.onupgradeneeded=function(e){
+		open=e.target.result;
+		store=open.createObjectStore("resume",{keyPath:"id"});
+	}
+	request.onsuccess=function(e){
+    open=e.target.result;
+    tx=open.transaction("resume","readwrite");
+    store=tx.objectStore("resume");
+    store.put({
+    	id:1,
+    	name:name,
+    	email:email,
+    	password:password,
+    	confirmpassword:confirmpassword,
+    	mobile:mobile
+    });
+	}
+}
+</script>
